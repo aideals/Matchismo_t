@@ -26,7 +26,7 @@
     self = [super init];
     
     if (self) {
-        for (int i = 0; i < self.cards.count; i++) {
+        for (int i = 0; i < cardCount; i++) {
             Card *card = [deck drawRandomCard];
             
             if (!card) {
@@ -57,7 +57,7 @@
         if (!card.isFaceUp) {
             for (Card *otherCard in self.cards) {
                 if (otherCard.isFaceUp && !otherCard.unPlayable) {
-                    int matchScore = [card matchCard:@[otherCard]];
+                    int matchScore = [card match:@[otherCard]];
                     if (matchScore) {
                         card.unPlayable = YES;
                         otherCard.unPlayable = YES;

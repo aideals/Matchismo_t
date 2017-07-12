@@ -21,7 +21,7 @@
 
 - (CardMatchingGame *)game
 {
-    if (_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
     return _game;
 }
 
@@ -36,7 +36,7 @@
     [super viewDidLoad];
     [self createLabel];
     [self updateUI];
-    NSLog(@"%@",self.view.subviews);
+ // NSLog(@"%@",self.view.subviews);
 }
 
 - (void)createLabel
@@ -73,7 +73,8 @@
         }
     }
     else {
-        for (UIButton *button in self.cardButtons) {
+        for (UIButton *button in self.cardButtons)
+        {
             Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:button]];
             [button setTitle:card.contents forState:UIControlStateSelected];
             [button setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
