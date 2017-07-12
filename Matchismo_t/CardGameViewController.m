@@ -36,6 +36,7 @@
     [super viewDidLoad];
     [self createLabel];
     [self updateUI];
+    NSLog(@"%@",self.view.subviews);
 }
 
 - (void)createLabel
@@ -56,17 +57,17 @@
 
 - (void)updateUI
 {
-    if (self.cardButtons == 0) {
+    if (self.cardButtons.count == 0) {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                [self.cardButtons addObject:btn];
                 btn.layer.cornerRadius = 5.0;
                 btn.frame = CGRectMake(x_space + (x_space + 60) * j, y_space + (y_space + 95) * i, 70, 95);
                 [btn setBackgroundColor:[UIColor colorWithRed:0.3 green:0.7 blue:0.4 alpha:1.0]];
                // [btn setBackgroundColor:[UIColor blueColor]];
                 [btn addTarget:self action:@selector(flipCard:) forControlEvents:UIControlEventTouchDown];
                 [btn setTitle:@"★" forState:UIControlStateNormal];
-                [self.cardButtons addObject:btn];
                 [self.view addSubview:btn];
             }
         }

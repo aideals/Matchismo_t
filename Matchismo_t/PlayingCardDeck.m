@@ -14,6 +14,7 @@
 - (id)init
 {
     self = [super init];
+    
     if (self) {
         for (NSString *suit in [PlayingCard validSuits]) {
             for (NSInteger rank = 1; rank <= [PlayingCard maxRank]; rank ++) {

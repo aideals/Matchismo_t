@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Card : NSObject
-@property (nonatomic,getter=isFaceUp) BOOL faceUp;
-@property (nonatomic,getter=isUnPlayable) BOOL unPlayable;
+@property (nonatomic,getter = isFaceUp) BOOL faceUp;
+@property (nonatomic,getter = isUnPlayable) BOOL unPlayable;
 @property (nonatomic,strong) NSString *contents;
 
 - (int)matchCard:(NSArray *)otherCards;

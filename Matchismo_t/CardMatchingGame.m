@@ -53,15 +53,15 @@
 {
     Card *card = [self cardAtIndex:index];
 
-    if (!card.isFaceUp) {
-        if (!card.isUnPlayable) {
+    if (!card.isUnPlayable) {
+        if (!card.isFaceUp) {
             for (Card *otherCard in self.cards) {
                 if (otherCard.isFaceUp && !otherCard.unPlayable) {
                     int matchScore = [card matchCard:@[otherCard]];
                     if (matchScore) {
                         card.unPlayable = YES;
                         otherCard.unPlayable = YES;
-                        self.score += MATCH_BONUS;
+                        self.score += matchScore * MATCH_BONUS;
                     }
                     else {
                         otherCard.faceUp = NO;
@@ -69,7 +69,7 @@
                     }
                     break;
                   }
-                }
+            }
             self.score -= FLIP_COST;
         }
         card.faceUp = !card.isFaceUp;

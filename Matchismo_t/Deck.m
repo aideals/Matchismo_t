@@ -22,10 +22,12 @@
 
 - (void)addCard:(Card *)card atTop:(BOOL)top
 {
-    if (top) {
+    if (top)
+    {
         [self.cards insertObject:card atIndex:0];
     }
-    else {
+    else
+    {
         [self.cards addObject:card];
     }
 }
