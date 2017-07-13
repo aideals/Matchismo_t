@@ -237,6 +237,7 @@
 				TargetAttributes = {
 					1D5829491F130D82003BA8D6 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = M2S6NN7DP8;
 						ProvisioningStyle = Automatic;
 					};
 					1D5829621F130D83003BA8D6 = {
@@ -450,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M2S6NN7DP8;
 				INFOPLIST_FILE = Matchismo_t/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ios.Matchismo-t";
@@ -461,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M2S6NN7DP8;
 				INFOPLIST_FILE = Matchismo_t/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ios.Matchismo-t";
@@ -533,6 +536,7 @@
 				1D5829791F130D83003BA8D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D58297A1F130D83003BA8D6 /* Build configuration list for PBXNativeTarget "Matchismo_tTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +545,7 @@
 				1D58297C1F130D83003BA8D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D58297D1F130D83003BA8D6 /* Build configuration list for PBXNativeTarget "Matchismo_tUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +554,7 @@
 				1D58297F1F130D83003BA8D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

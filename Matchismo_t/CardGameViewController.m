@@ -19,12 +19,6 @@
 
 @implementation CardGameViewController
 
-- (CardMatchingGame *)game
-{
-    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
-    return _game;
-}
-
 - (NSMutableArray *)cardButtons
 {
     if (!_cardButtons) _cardButtons = [[NSMutableArray alloc] init];
@@ -34,9 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self updateUI];
+    [self createLabel];
+   
+    /*
     [self createLabel];
     [self updateUI];
- // NSLog(@"%@",self.view.subviews);
+    代码的执行顺序是错的
+    */
+    // NSLog(@"%@",self.view.subviews);
 }
 
 - (void)createLabel
@@ -84,6 +84,13 @@
         }
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
+}
+
+- (CardMatchingGame *)game
+{
+    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+    // if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[Deck alloc] init]]; //错误的
+    return _game;
 }
 
 - (IBAction)flipCard:(UIButton *)sender
