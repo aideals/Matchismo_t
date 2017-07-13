@@ -9,13 +9,14 @@
 #import "PlayingCard.h"
 
 @implementation PlayingCard
+//@synthesize suit = _suit;
 
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
     if (otherCards.count == 1) {
         PlayingCard *otherCard = [otherCards firstObject];
-       // PlayingCard *otherCard = [otherCards lastObject];
+       // PlayingCard *otherCard = [otherCards lastObject]; firstObject和lastObject都可以
         if ([otherCard.suit isEqualToString:self.suit]) {
             score = 1;
         }
